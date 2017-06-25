@@ -18,7 +18,7 @@ data Frame : Type where
   Strike : Frame
 
 roll : (x, y: Nat) -> { auto prf : ValidFrame x y } -> Frame
-roll x y = TwoRolls x y
+roll {prf} x y = TwoRolls x y {prf}
 
 strike : Frame
 strike = Strike
